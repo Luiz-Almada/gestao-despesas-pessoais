@@ -7,8 +7,11 @@ export interface IDespesa {
   dia: string;
 }
 
+export function getTodasDespesasEndpoint(): Promise<IDespesa[]> {
+  return fetch('http://localhost:3001/despesas', {
+  }).then(handleResponse);
+}
 export function getDespesasEndpoint(mes: string): Promise<IDespesa[]> {
-  console.log('Backend', mes)
   return fetch(`http://localhost:3001/despesas?mes=${mes}`, {
   }).then(handleResponse);
 }
